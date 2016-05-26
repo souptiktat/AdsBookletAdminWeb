@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="PostAccessoryBean" type="com.classified.admin.actionbeans.PostAccessoryBean"/>
+        <form-bean name="MobiOSTabBean" type="com.classified.admin.actionbeans.MobiOSTabBean"/>
+        <form-bean name="MobiNoofsimBean" type="com.classified.admin.actionbeans.MobiNoofsimBean"/>
+        <form-bean name="MobiModelBean" type="com.classified.admin.actionbeans.MobiModelBean"/>
+        <form-bean name="MobiIncludeBean" type="com.classified.admin.actionbeans.MobiIncludeBean"/>
+        <form-bean name="MobiConditionBean" type="com.classified.admin.actionbeans.MobiConditionBean"/>
+        <form-bean name="MobileBrandBean" type="com.classified.admin.actionbeans.MobileBrandBean"/>
+        <form-bean name="ClassifiedSubCategoryBean" type="com.classified.admin.actionbeans.ClassifiedSubCategoryBean"/>
+        <form-bean name="ClassifiedAdvBean" type="com.classified.admin.actionbeans.ClassifiedAdvBean"/>
+        <form-bean name="ClassifiedCategoryBean" type="com.classified.admin.actionbeans.ClassifiedCategoryBean"/>
+        <form-bean name="AccessoryBrandBean" type="com.classified.admin.actionbeans.AccessoryBrandBean"/>
+        <form-bean name="AccessoryTypeBean" type="com.classified.admin.actionbeans.AccessoryTypeBean"/>
+        <form-bean name="UserLoginForm" type="com.classifiedindia.formbean.UserLoginForm"/>
+ 
+        <form-bean name="MobilePhonesFormBean" type="com.classifiedindia.formbean.MobilePhonesFormBean"/>
+        <form-bean name="BuyerSellerInfoBean" type="com.classifiedindia.formbean.BuyerSellerInfoBean"/>
+        <form-bean name="radioActionForm" type="com.classifiedindia.formbean.RadioActionForm"/>
+        <form-bean name="UserProfileActionForm" type="com.classifiedindia.formbean.UserProfileActionForm"/>
+        <form-bean name="subcategoryActionForm" type="com.classifiedindia.formbean.SubCategoryActionForm"/>
+        <form-bean name="classifiedIndiaFormBean" type="com.classifiedindia.formbean.ClassifiedIndiaFormBean"/>
+        <form-bean name="loginActionForm" type="com.classifiedindia.formbean.LoginActionForm"/>
+        <form-bean name="userProfileActionForm" type="com.classifiedindia.formbean.userProfileActionForm"/>
+        <form-bean name="classifiedSearchForm" type="com.classifiedindia.formbean.ClassifiedSearchForm"/>
+        <form-bean name="PasswordActionForm" type="com.classifiedindia.formbean.PasswordActionForm"/>
+        <form-bean name="loginActionForm1" type="com.classifiedindia.formbean.LoginActionForm"/>
+        <form-bean name="AdminAccessBean" type="com.classifiedindia.admin.bean.AdminAccessBean"/>
+        <form-bean name="AdminAccessBrandBean" type="com.classifiedindia.admin.bean.AdminAccessBrandBean"/>
+        <form-bean name="AdminAccessTypeBean" type="com.classifiedindia.admin.bean.AdminAccessTypeBean"/>
+        <form-bean name="AdminForgotPasswordForm" type="com.classifiedindia.admin.bean.AdminForgotPasswordForm"/>
+        <form-bean name="AdminActionForm" type="com.classifiedindia.admin.bean.AdminActionForm"/>
+    </form-beans>
+
+    <global-exceptions>
+    
+    </global-exceptions>
+   
+    <global-forwards>
+        <forward name="Welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/Welcome" forward="adminDetailsLayout2"/>
+        <action path="/home"  type="org.apache.struts.actions.ForwardAction" parameter="baseLayout"/>   
+        <action path="/myhome" type="org.apache.struts.actions.ForwardAction" parameter="myhome" />
+        <action path="/homepage" type="org.apache.struts.actions.ForwardAction" parameter="homepage" />
+        <action path="/categoryypage" type="org.apache.struts.actions.ForwardAction" parameter="categoryypage" />
+        <action path="/registerLink" type="org.apache.struts.actions.ForwardAction" parameter="registerTiles" />
+        <action path="/forgotLink"  type="org.apache.struts.actions.ForwardAction" parameter="forgotpassTiles"/>
+        <action path="/login" type="org.apache.struts.actions.ForwardAction" parameter="loginTiles" />
+        <action path="/adminloginLink" type="org.apache.struts.actions.ForwardAction" parameter="admindetails" />
+        <action path="/forgotpasswordLink" type="org.apache.struts.actions.ForwardAction" parameter="forgotpasswordTiles"/>
+        <action path="/accessory_details_Link" type="org.apache.struts.actions.ForwardAction" parameter="accessory_details_Tiles"/>
+        <action path="/accessory_type_Link" type="org.apache.struts.actions.ForwardAction" parameter="accessdetailstype"/>
+        <action path="/classified_category_details_Link" type="org.apache.struts.actions.ForwardAction" parameter="classifiedcategorytiles"/>
+        <action path="/addAccessoryTypeRecord" type="org.apache.struts.actions.ForwardAction" parameter="addAccessoryTypeTiles"/>
+        <action path="/addAccessoryBrandRecord" type="org.apache.struts.actions.ForwardAction" parameter="addAccessoryBrandTiles"/>
+        <action path="/addClassifiedCategoryRecord" type="org.apache.struts.actions.ForwardAction" parameter="addClassifiedCategoryTiles"/>
+        <action path="/addClassifiedAdv" type="org.apache.struts.actions.ForwardAction" parameter="addClassifiedAdvTiles"/>
+        <action path="/addClassifiedSubCatRecord" type="org.apache.struts.actions.ForwardAction" parameter="addClassifiedSubCatTiles"/>
+        <action path="/mobile_category_details_Link" type="org.apache.struts.actions.ForwardAction" parameter="mobilecategoryTiles"/>
+        <action path="/addMobileBrand" type="org.apache.struts.actions.ForwardAction" parameter="addMobileBrandTiles"/>
+        <action path="/addMobileCondition" type="org.apache.struts.actions.ForwardAction" parameter="addMobileCondTiles"/>
+        <action path="/addMobiIncludeRecord" type="org.apache.struts.actions.ForwardAction" parameter="addMobileIncludeTiles"/>
+        <action path="/addMobiModelRecord" type="org.apache.struts.actions.ForwardAction" parameter="addMobileModelTiles"/>
+        <action path="/addMobiNoofsimRecord" type="org.apache.struts.actions.ForwardAction" parameter="addMobiNoofsimTiles"/>
+        <action path="/addMobiOSTabRecord" type="org.apache.struts.actions.ForwardAction" parameter="addMobiOsTabTiles"/>
+        <action path="/addPostAccessoryRecord" type="org.apache.struts.actions.ForwardAction" parameter="addPostAccessoryTiles"/>
+        
+        <action path="/logout" type="org.apache.struts.actions.ForwardAction" parameter="logouttiles"/>
+           
+           <action path="/subcat" name="MobilePhonesFormBean" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="subCategory" validate="false">
+            <forward name="subcategorytype" path="subcategorytype"/>     
+        </action>
+    
+        
+        <action path="/categoryaction" name="subcategoryActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="categoryaction">
+            <forward name="categorypage" path="categorypage"/>
+        </action>
+        <action path="/categoryyaction" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="categoryyaction">
+            <forward name="homelifestyle" path="homelifestyle"/>
+        </action>       
+<!--        <action path="/adminuserlogin" name="loginActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="adminuserlogin">
+                <forward name="adsuccess" path="adsuccessearch"/>
+        </action>-->
+<!--        <action path="/admindetails" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="admindetails">
+                <forward name="admindetails" path="admindetails"/>
+        </action>-->
+
+        <action path="/paymentcategory" name="radioActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="paymentcategory">
+                <forward name="paymentcategory" path="paymentcategory"/>
+        </action>
+        <action path="/organizationDetails" name="classifiedIndiaFormBean" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="organizationDetails">
+                <forward name="organizationDetails" path="organizationDetails"/>
+         </action>
+    
+         <action input="registerTiles" path="/register" name="loginActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="postregister" scope="request">
+                <forward name="postregister" path="postregister"/>
+                <forward name="failtoregister" path="failtoregister"/>  
+        </action>
+        <action path="/postregister" name="loginActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="postregister" scope="request">
+                <forward name="postregister" path="postregister"/>
+                <forward name="failtoregister" path="failtoregister"/>            
+        </action>
+
+        <action path="/category" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="category">
+            <forward name="category" path="category"/>
+        </action>
+        <action path="/postcategory" name="categoryActionForm"  type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="postcategory">
+            <forward name="postcategory" path="postcategory"/>
+        </action>
+
+        <action path="/subcategory" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="subcategory">
+            <forward name="subcategory" path="subcategory"/>
+        </action>
+        <action path="/postsubcategory" name="categoryActionForm"  type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="postsubcategory">
+            <forward name="postsubcategory" path="postsubcategory"/>
+        </action>
+        
+         
+        <action input="loginTiles" name="UserLoginForm" path="/userLogin" scope="request" type="com.classifiedindia.action.LoginAction" parameter="userLogin">
+           <forward name="success" path="success"/>
+           <forward name="failure" path="failure"/>
+        </action>
+        <action input="/leftmenu.jsp" name="classifiedIndiaFormBean" path="/mydashboard" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="mydashboard">
+          <forward name="mydashboard"  path="mydashboard"/>
+        </action>
+        <action path="/guesthouses" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="guesthouses">
+          <forward name="guesthouses" path="guesthouses"/>
+          </action>
+        <action path="/businessproposal" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="businessproposal">
+            <forward name="businessproposal" path="businessproposal"/>
+        </action>
+        <action path="/holidaytimes" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="holidaytimes">
+            <forward name="holidaytimes" path="holidaytimes"/>
+            </action>
+        <action path="/culturalevents" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="culturalevents">
+            <forward name="culturalevents" path="culturalevents"/>
+        </action>
+        <action path="/escorts" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="escorts">
+            <forward name="escorts" path="escorts"/>
+        </action>
+        <action path="/insertdata" name="classifiedIndiaFormBean" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="insertdata" scope="request">
+            <forward name="insertdata" path="insertdata"/>
+        </action>
+        <action path="/hint" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="hint">
+            <forward name="hint" path="hint"/>
+        </action>
+        <action path="/postclassifiedadvs" name="classifiedIndiaFormBean"  type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="postclassifiedadvs">
+            <forward name="postclassifiedadvs" path="postclassifiedadvs"/>
+        </action>
+                 
+           
+        <action path="/aboutus"   type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="aboutus">
+            <forward name="aboutus" path="aboutus"/>
+        </action>
+        <action path="/help"   type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="help">
+            <forward name="help" path="help"/>
+        </action>
+        <action path="/term"   type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="term">
+            <forward name="term" path="term"/>
+        </action>
+        <action path="/advertise"   type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="advertise">
+            <forward name="advertise" path="advertise"/>
+        </action>
+        <action path="/privacy"   type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="privacy">
+            <forward name="privacy" path="privacy"/>
+        </action>
+        <action input="/viewads.jsp" name="classifiedIndiaFormBean" parameter="editdata" path="/edit" scope="session" type="com.classifiedindia.action.ClassifiedIndiaAction">
+            <forward name="editdata" path="editdata"/>
+        </action>
+            <action input="/leftmenu.jsp" name="classifiedIndiaFormBean" parameter="viewads" path="/viewads" scope="session" type="com.classifiedindia.action.ClassifiedIndiaAction">
+                <forward name="viewads" path="viewads"/>          
+            </action>
+            <action input="/editdata.jsp" name="classifiedIndiaFormBean" parameter="update" path="/update" scope="session" type="com.classifiedindia.action.ClassifiedIndiaAction">
+                <forward name="update" path="update"/>            
+            </action>
+            <action input="/mydashboard.jsp" name="classifiedIndiaFormBean" parameter="mydashedit" path="/mydashedit" scope="request" type="com.classifiedindia.action.ClassifiedIndiaAction">
+                <forward name="mydashedit" path="mydashedit"/>            
+            </action>
+            <action input="/home.jsp" name="classifiedIndiaFormBean" parameter="searchResult" path="/search" scope="request" type="com.classifiedindia.action.ClassifiedIndiaAction">
+                <forward name="searchpage" path="searchpage"/>           
+            </action>
+             <action input="subcategorytype" name="MobilePhonesFormBean" parameter="mobilepage" path="/mobilepage" scope="request" type="com.classifiedindia.action.MobileAdsAction">
+                <forward name="sellerbuyerinfo" path="sellerbuyerinfo"/>            
+            </action>
+         <action input="category/mobiles/accessories.jsp" name="MobilePhonesFormBean" parameter="accessorypage" path="/accessorypage" scope="request" type="com.classifiedindia.action.MobileAdsAction">
+                <forward name="sellerbuyerinfo" path="sellerbuyerinfo"/>            
+            </action>
+            <action input="category/mobiles/tablets.jsp" name="MobilePhonesFormBean" parameter="tabletpage" path="/tabletpage" scope="request" type="com.classifiedindia.action.MobileAdsAction">
+                <forward name="sellerbuyerinfo" path="sellerbuyerinfo"/>            
+            </action>
+            <action input="sellerbuyerinfo" name="BuyerSellerInfoBean" path="/buyersellerPath" scope="request" type="com.classifiedindia.action.buyerselleraction" parameter="buyersellerinfo" >
+                <forward name="buyerselleraction" path="buyerselleraction"/>
+            </action>
+            
+            <!--<action input="home.jsp" path="/search" name="classifiedSearchForm" type="org.apache.struts.actions.ForwardAction" parameter="searchResult" />  --> 
+        <action input="/" name="categoryActionForm" path="/registerAction" scope="session" type="com.classifiedindia.action.RegisterAction"/>
+       
+        
+             <!--rajrupa start-->
+            
+<!--            <forward name="updatepass" path="updatepassTiles"/></action>-->
+            <action input="updatepassTiles" path="/updatepass" name="loginActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="successpassword" scope="request" >
+            <forward name="successpassword" path="successpassword"/>
+            </action>
+             <!--rajrupa for password recovery-->
+             
+            <action input="forgotpassTiles" path="/forgotpath" name="loginActionForm1" type="com.classifiedindia.action.UserRecoveryAction" parameter="passwordrecovery" scope="request">
+                    <forward name="forgotpassword" path="updatepass"/>
+                    <forward name="failtoregister" path="forgotpassTiles"/>  
+            </action>
+             
+            <!--rajrupa end-->
+          <!-- <action path="/accessory_type_details" name="AdminAccessTypeBean" scope="request" type="com.classifiedindia.action.AdminAccessAction" parameter="accessTypeAction">
+                <forward name="accesstype" path="accessdetailstype"/>
+            </action>   -->
+            
+           <!-- <action path="/accessory_brand_details" name="AdminAccessBrandBean" scope="request" type="com.classifiedindia.action.AdminAccessAction" parameter="accessBrandAction">
+                <forward name="accessbrand" path="accessdetailsbrand"/>
+            </action> -->
+            
+            
+        <action input="admindetails" path="/adminuserlogin" name="AdminActionForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="adminuserlogin" validate="true">
+            <forward name="adsuccess" path="adsuccessearch"/>
+            <forward name="adfailure" path="adfailure"/>
+        </action>
+        
+        <action path="/admindetails" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="admindetails">
+        <forward name="admindetails" path="admindetails"/>
+        </action>
+        
+        <action input="forgotpasswordTiles" path="/forgotpassword" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="forgotpassword">
+            <forward name="forgotpassword" path="forgotpasswordTiles"/>
+        </action>
+        <action input="adforgotfailure" path="/adminpassword" name="AdminForgotPasswordForm" type="com.classifiedindia.action.ClassifiedIndiaAction" parameter="adminforgotpassword" validate="true">
+            <forward name="adminforgotsuccess" path="succesfullrecover"/>
+            <forward name="adminforgotfailure" path="adforgotfailure"/>
+        </action>
+        <action name="AccessoryTypeBean" path="/accessory_type_details" scope="request" type="com.classified.admin.actions.AccessoryTypeAction" parameter="viewAllAccessoryTypeRecord">
+            <forward name="success" path="accessoryTypeSuccess"/>       
+        </action>
+        <action input="/accessory_type_details.do" name="AccessoryTypeBean" path="/deleteAccessoryRecord" scope="request" type="com.classified.admin.actions.AccessoryTypeAction" parameter="deleteAccessoryTypeRecord" validate="false">
+            <forward name="success" path="viewAllAccessoryType"/>
+        </action>
+        <action input="/accessory_type_details.do" name="AccessoryTypeBean" path="/modifyAccessoryRecord" scope="request" type="com.classified.admin.actions.AccessoryTypeAction" parameter="modifyAccessoryTypeInfo" validate="false">
+            <forward name="success" path="modifyAccessoryType"/>
+        </action>
+        <action input="/accessory_type_details.do" name="AccessoryTypeBean" path="/modifyAccessoryTypeRecord" scope="request" type="com.classified.admin.actions.AccessoryTypeAction" parameter="modifyAccessoryTypeRecord" validate="false">
+            <forward name="success" path="viewAllAccessoryType"/>
+        </action>
+        <action input="/accessory_type_details.do" name="AccessoryTypeBean" path="/addAccessoryType" scope="request" type="com.classified.admin.actions.AccessoryTypeAction" parameter="addAccessoryTypeRecord" validate="false">
+            <forward name="success" path="viewAllAccessoryType"/>
+            <forward name="failure" path="failToAddAccessoryType"/> 
+        </action>
+        
+        <action name="AccessoryBrandBean" path="/accessory_brand_details" scope="request" type="com.classified.admin.actions.AccessoryBrandAction" parameter="viewAllAccessoryBrandRecord">
+            <forward name="success" path="accessoryBrandSuccess"/>
+        </action>   
+        <action input="/accessory_brand_details.do" name="AccessoryBrandBean" path="/deleteAccessoryBrandRecord" scope="request" type="com.classified.admin.actions.AccessoryBrandAction" parameter="deleteAccessoryBrandRecord" validate="false">  
+            <forward name="success" path="viewAllAccessoryBrand"/> 
+        </action>
+        <action input="/accessory_brand_details.do" name="AccessoryBrandBean" path="/modifyAccessoryBrandRecord" scope="request" type="com.classified.admin.actions.AccessoryBrandAction" parameter="modifyAccessoryBrandInfo" validate="false">
+            <forward name="success" path="modifyAccessoryBrand"/>
+        </action>
+        <action input="/accessory_brand_details.do" name="AccessoryBrandBean" path="/modifyAccessBrand" scope="request" type="com.classified.admin.actions.AccessoryBrandAction" parameter="modifyAccessoryBrandRecord" validate="false">
+            <forward name="success" path="viewAllAccessoryBrand"/>
+        </action>
+        <action input="/accessory_brand_details.do" name="AccessoryBrandBean" path="/addAccessoryBrand" scope="request" type="com.classified.admin.actions.AccessoryBrandAction" parameter="addAccessoryBrandRecord" validate="false">
+            <forward name="success" path="viewAllAccessoryBrand"/>
+            <forward name="failure" path="failToAddAccessoryBrand"/>
+        </action>
+
+
+        <action name="ClassifiedCategoryBean" path="/classified_category" scope="request" type="com.classified.admin.actions.ClassifiedCategoryAction" parameter="viewAllClassifiedCategoryRecord">
+            <forward name="success" path="classifiedCategorySuccess"/>
+        </action>
+        <action input="/classified_category.do" name="ClassifiedCategoryBean" path="/deleteClassifiedCategoryRecord" scope="request" type="com.classified.admin.actions.ClassifiedCategoryAction" parameter="deleteClassifiedCategoryRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedCategory"/>
+        </action>
+        <action input="/classified_category.do" name="ClassifiedCategoryBean" path="/modifyClassifiedCategoryRecord" scope="request" type="com.classified.admin.actions.ClassifiedCategoryAction" parameter="modifyClassifiedCategoryInfo" validate="false">
+            <forward name="success" path="modifyClassifiedCategory"/>
+        </action>
+        <action input="/classified_category.do" name="ClassifiedCategoryBean" path="/modifyClassifiedCat" scope="request" type="com.classified.admin.actions.ClassifiedCategoryAction" parameter="modifyClassifiedCategoryRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedCategory"/>
+        </action>
+        <action input="/classified_category.do" name="ClassifiedCategoryBean" path="/addClassifiedCat" scope="request" type="com.classified.admin.actions.ClassifiedCategoryAction" parameter="addClassifiedCategoryRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedCategory"/>
+            <forward name="failure" path="failToAddClassifiedCategory"/>
+        </action>
+        
+        
+        <action name="ClassifiedAdvBean" path="/classified_adv_photo" scope="request" type="com.classified.admin.actions.ClassifiedAdvAction" parameter="viewAllClassifiedAdvRecord">
+            <forward name="success" path="classifiedAdvPhoto"/>
+        </action>
+        <action input="/classified_adv_photo.do" name="ClassifiedAdvBean" path="/deleteClassifiedAdvRecord" scope="request" type="com.classified.admin.actions.ClassifiedAdvAction" parameter="deleteClassifiedAdvRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedAdv"/>
+        </action>
+        <action input="/classified_adv_photo.do" name="ClassifiedAdvBean" path="/modifyClassifiedAdvRecord" scope="request" type="com.classified.admin.actions.ClassifiedAdvAction" parameter="modifyClassifiedAdvInfo" validate="false">
+            <forward name="success" path="modifyClassifiedAdv"/>
+        </action>
+        <action input="/classified_adv_photo.do" name="ClassifiedAdvBean" path="/modifyClassifiedAdv" scope="request" type="com.classified.admin.actions.ClassifiedAdvAction" parameter="modifyClassifiedAdvRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedAdv"/>
+        </action>
+        <action input="/classified_adv_photo.do" name="ClassifiedAdvBean" path="/addClassifiedAdv" scope="request" type="com.classified.admin.actions.ClassifiedAdvAction" parameter="addClassifiedAdvRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedAdv"/>
+            <forward name="failure" path="failToAddClassifiedAdv"/>
+        </action>
+        
+        
+        <action name="ClassifiedSubCategoryBean" path="/classified_sub_category" scope="request" type="com.classified.admin.actions.ClassifiedSubCategoryAction" parameter="viewAllClassifiedSubCategoryRecord">
+            <forward name="success" path="classifiedSubCategory"/>
+        </action>
+        <action input="classified_sub_category.do" name="ClassifiedSubCategoryBean" path="/deleteClassifiedSubCat" scope="request" type="com.classified.admin.actions.ClassifiedSubCategoryAction" parameter="deleteClassifiedSubCategoryRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedSubCat"/>
+        </action>
+        <action input="classified_sub_category.do" name="ClassifiedSubCategoryBean" path="/modifyClassifiedSubCatRecord" scope="request" type="com.classified.admin.actions.ClassifiedSubCategoryAction" parameter="modifyClassifiedSubCategoryInfo" validate="false">
+            <forward name="success" path="modifyClassifiedSubCat"/>
+        </action>
+        <action input="classified_sub_category.do" name="ClassifiedSubCategoryBean" path="/modifyClassifiedSubCat" scope="request" type="com.classified.admin.actions.ClassifiedSubCategoryAction" parameter="modifyClassifiedSubCategoryRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedSubCat"/>
+        </action>
+        <action input="classified_sub_category.do" name="ClassifiedSubCategoryBean" path="/addClassifiedSubCat" scope="request" type="com.classified.admin.actions.ClassifiedSubCategoryAction" parameter="addClassifiedSubCatRecord" validate="false">
+            <forward name="success" path="viewAllClassifiedSubCat"/>
+            <forward name="failure" path="failToAddClassifiedSubCat"/>
+        </action>
+        
+        
+        <action name="MobileBrandBean" path="/mobi_brand_table" scope="request" type="com.classified.admin.actions.MobileBrandAction" parameter="viewAllMobileBrandInfo">
+            <forward name="success" path="mobileBrand"/>
+        </action>
+        <action input="mobi_brand_table.do" name="MobileBrandBean" path="/deleteMobileBrand" scope="request" type="com.classified.admin.actions.MobileBrandAction" parameter="deleteMobileBrandRecord" validate="false">
+            <forward name="success" path="viewAllMobileBrand"/>
+        </action>
+        <action input="mobi_brand_table.do" name="MobileBrandBean" path="/modifyMobileBrandRecord" scope="request" type="com.classified.admin.actions.MobileBrandAction" parameter="modifyMobileBrandInfo" validate="false">
+            <forward name="success" path="modifyMobileBrand"/>
+        </action>
+        <action input="mobi_brand_table.do" name="MobileBrandBean" path="/modifyMobileBrand" scope="request" type="com.classified.admin.actions.MobileBrandAction" parameter="modifyMobileBrandRecord" validate="false">
+            <forward name="success" path="viewAllMobileBrand"/>
+        </action>
+        <action input="mobi_brand_table.do" name="MobileBrandBean" path="/addMobileBrandInfo" scope="request" type="com.classified.admin.actions.MobileBrandAction" parameter="addMobileBrandRecord" validate="false">
+            <forward name="success" path="viewAllMobileBrand"/>
+            <forward name="failure" path="failToMobileBrand"/>
+        </action>
+        
+        <action name="MobiConditionBean" path="/mobi_condition_tab" scope="request" type="com.classified.admin.actions.MobiConditionAction" parameter="viewAllMobiCondInfo">
+            <forward name="success" path="mobileCond"/>
+        </action>    
+        <action input="mobi_condition_tab.do" name="MobiConditionBean" path="/deleteMobiCondition" scope="request" type="com.classified.admin.actions.MobiConditionAction" parameter="deleteMobiCondRecord" validate="false">
+            <forward name="success" path="viewAllMobileCond"/>
+        </action>
+        <action input="mobi_condition_tab.do" name="MobiConditionBean" path="/modifyMobileCondRecord" scope="request" type="com.classified.admin.actions.MobiConditionAction" parameter="modifyMobiCondInfo" validate="false">
+            <forward name="success" path="modifyMobileCond"/>
+        </action>
+        <action input="mobi_condition_tab.do" name="MobiConditionBean" path="/modifyMobileCond" scope="request" type="com.classified.admin.actions.MobiConditionAction" parameter="modifyMobiCondRecord" validate="false">
+            <forward name="success" path="viewAllMobileCond"/>
+        </action>
+        <action input="mobi_condition_tab.do" name="MobiConditionBean" path="/addMobileCondInfo" scope="request" type="com.classified.admin.actions.MobiConditionAction" parameter="addMobiCondRecord" validate="false">
+            <forward name="success" path="viewAllMobileCond"/>
+            <forward name="failure" path="failToMobileCond"/>
+        </action>
+        <action name="MobiIncludeBean" path="/mobi_include_tab" scope="request" type="com.classified.admin.actions.MobiIncludeAction" parameter="viewAllMobiIncludeRecord"> 
+            <forward name="success" path="mobileInclude"/>
+        </action>
+        <action input="mobi_include_tab.do" name="MobiIncludeBean" path="/deleteMobiInclude" scope="request" type="com.classified.admin.actions.MobiIncludeAction" parameter="deleteMobiIncludeRecord" validate="false">
+            <forward name="success" path="viewAllMobileInclude"/>
+        </action>       
+        <action input="mobi_include_tab.do" name="MobiIncludeBean" path="/modifyMobiIncludeRecord" scope="request" type="com.classified.admin.actions.MobiIncludeAction" parameter="modifyMobiIncludeInfo" validate="false">
+            <forward name="success" path="modifyMobileInclude"/>
+        </action>
+        <action input="mobi_include_tab.do" name="MobiIncludeBean" path="/modifyMobiInclude" scope="request" type="com.classified.admin.actions.MobiIncludeAction" parameter="modifyMobiIncludeRecord" validate="false">
+            <forward name="success" path="viewAllMobileInclude"/>
+        </action>
+        <action input="mobi_include_tab.do" name="MobiIncludeBean" path="/addMobiIncludeInfo" scope="request" type="com.classified.admin.actions.MobiIncludeAction" parameter="addMobiIncludeRecord" validate="false">
+            <forward name="success" path="viewAllMobileInclude"/>
+            <forward name="failure" path="failToMobileInclude"/>
+        </action>
+        
+        <action name="MobiModelBean" path="/mobi_model_table" scope="request" type="com.classified.admin.actions.MobiModelAction" parameter="viewAllMobiModelRecord">
+            <forward name="success" path="mobileModel"/>
+        </action>    
+        <action input="mobi_model_table.do" name="MobiModelBean" path="/deleteMobiModel" scope="request" type="com.classified.admin.actions.MobiModelAction" parameter="deleteMobiModelRecord" validate="false">
+            <forward name="success" path="viewAllMobileModel"/>
+        </action>
+        <action input="mobi_model_table.do" name="MobiModelBean" path="/modifyMobiModelRecord" scope="request" type="com.classified.admin.actions.MobiModelAction" parameter="modifyMobiModelInfo" validate="false">
+            <forward name="success" path="modifyMobileModel"/>
+        </action>
+        <action input="mobi_model_table.do" name="MobiModelBean" path="/modifyMobiModel" scope="request" type="com.classified.admin.actions.MobiModelAction" parameter="modifyMobiModelRecord" validate="false">
+            <forward name="success" path="viewAllMobileModel"/>
+        </action>
+        <action input="mobi_model_table.do" name="MobiModelBean" path="/addMobiModelInfo" scope="request" type="com.classified.admin.actions.MobiModelAction" parameter="addMobiModelRecord" validate="false">
+            <forward name="success" path="viewAllMobileModel"/>
+            <forward name="failure" path="failToMobileModel"/>
+        </action>
+        
+        <action name="MobiNoofsimBean" path="/mobi_noofsim_tab" scope="request" type="com.classified.admin.actions.MobiNoofsimAction" parameter="viewAllMobiNoofsimRecord">
+            <forward name="success" path="mobiNoofsim"/>
+        </action>
+        <action input="mobi_noofsim_tab.do" name="MobiNoofsimBean" path="/deleteMobiNoofsim" scope="request" type="com.classified.admin.actions.MobiNoofsimAction" parameter="deleteMobiNoofsimRecord">
+            <forward name="success" path="viewAllMobiNoofsim"/>
+        </action>
+        <action input="mobi_noofsim_tab.do" name="MobiNoofsimBean" path="/modifyMobiNoofsimRecord" scope="request" type="com.classified.admin.actions.MobiNoofsimAction" parameter="modifyMobiNoofsimInfo" validate="false">
+            <forward name="success" path="modifyMobiNoofsim"/>
+        </action>
+        <action input="mobi_noofsim_tab.do" name="MobiNoofsimBean" path="/modifyMobiNoofsim" scope="request" type="com.classified.admin.actions.MobiNoofsimAction" parameter="modifyMobiNoofsimRecord" validate="false">
+            <forward name="success" path="viewAllMobiNoofsim"/>
+        </action>
+        <action input="mobi_noofsim_tab.do" name="MobiNoofsimBean" path="/addMobiNoofsimInfo" scope="request" type="com.classified.admin.actions.MobiNoofsimAction" parameter="addMobiNoofsimRecord" validate="false">
+            <forward name="success" path="viewAllMobiNoofsim"/>
+            <forward name="failure" path="failToMobiNoofsim"/>
+        </action>
+        
+        <action name="MobiOSTabBean" path="/mobi_os_tab" scope="request" type="com.classified.admin.actions.MobiOSTabAction" parameter="viewAllMobiOSTabRecord">   
+            <forward name="success" path="mobiOsTabTiles"/>
+        </action>  
+        <action input="mobi_os_tab.do" name="MobiOSTabBean" path="/deleteMobiOSTab" scope="request" type="com.classified.admin.actions.MobiOSTabAction" parameter="deleteMobiOSTabRecord">
+            <forward name="success" path="viewAllMobiOsTab"/>
+        </action>
+        <action input="mobi_os_tab.do" name="MobiOSTabBean" path="/modifyMobiOSTabRecord" scope="request" type="com.classified.admin.actions.MobiOSTabAction" parameter="modifyMobiOSTabInfo" validate="false">
+            <forward name="success" path="modifyMobiOsTab"/>
+        </action>
+        <action input="mobi_os_tab.do" name="MobiOSTabBean" path="/modifyMobiOSTab" scope="request" type="com.classified.admin.actions.MobiOSTabAction" parameter="modifyMobiOSTabRecord" validate="false">
+            <forward name="success" path="viewAllMobiOsTab"/>
+        </action>
+        <action input="mobi_os_tab.do" name="MobiOSTabBean" path="/addMobiOSTabInfo" scope="request" type="com.classified.admin.actions.MobiOSTabAction" parameter="addMobiOSTabRecord" validate="false">
+            <forward name="success" path="viewAllMobiOsTab"/>
+            <forward name="failure" path="failtoMobiOSTab"/>
+        </action>
+        
+        <action name="PostAccessoryBean" path="/post_accessory_details" scope="request" type="com.classified.admin.actions.PostAccessoryAction" parameter="viewAllPostAccessoryRecord">
+            <forward name="success" path="postAccessory"/>
+        </action>    
+        <action input="post_accessory_details.do" name="PostAccessoryBean" path="/deletePostAccessory" scope="request" type="com.classified.admin.actions.PostAccessoryAction" parameter="deletePostAccessoryRecord">
+            <forward name="success" path="viewAllPostAccessory"/>
+        </action>
+        <action input="post_accessory_details.do" name="PostAccessoryBean" path="/modifyPostAccessoryRecord" scope="request" type="com.classified.admin.actions.PostAccessoryAction" parameter="modifyPostAccessoryInfo" validate="false">
+            <forward name="success" path="modifyPostAccessory"/>
+        </action>
+        <action input="post_accessory_details.do" name="PostAccessoryBean" path="/modifyPostAccessory" scope="request" type="com.classified.admin.actions.PostAccessoryAction" parameter="modifyPostAccessoryRecord" validate="false">
+            <forward name="success" path="viewAllPostAccessory"/>
+        </action>
+        <action input="post_accessory_details.do" name="PostAccessoryBean" path="/addPostAccessoryInfo" scope="request" type="com.classified.admin.actions.PostAccessoryAction" parameter="addPostAccessoryRecord" validate="false">
+            <forward name="success" path="viewAllPostAccessory"/>
+            <forward name="failure" path="failtoPostAccessory"/>
+        </action>
+        
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

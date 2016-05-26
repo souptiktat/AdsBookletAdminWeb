@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    <!-- sample tiles definitions
+    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
+        <put name="title"  value="Sample Page Title" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="menu"   value=".mainMenu" />
+        <put name="footer" value="/common/footer.jsp" />
+        <put name="body"   value=".portal.body" />
+    </definition>
+
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->
+
+    <definition name="baseLayout" path="/layout.jsp">
+        <put name="title" value="Tiles Example" />
+        <put name="home" value="/tiles_pages/home.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="leftmenu" value="/tiles_pages/leftmenu.jsp" />
+        <put name="body" value="/tiles_pages/body.jsp" />
+        <put name="footer" value="/tiles_pages/footer.jsp" />
+        <put name="rightmenu" value="/tiles_pages/rightmenu.jsp" />
+    </definition>
+  
+    <definition name="categoryypage" extends="baseLayout">       
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>  
+    <definition name="categorypage" extends="baseLayout">      
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="body" value="/subcategorypage.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>  
+    <definition name="homelifestyle" extends="baseLayout">
+        <put name="body" value="/category/home-lifestyle.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="edulearning" extends="baseLayout">
+        <put name="body" value="/category/edulearning.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="community" extends="baseLayout">
+        <put name="body" value="/category/community.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="matrimonial" extends="baseLayout">
+        <put name="body" value="/category/matrimonial.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    
+    <!-- This is for logout tiles def -->
+    
+    <definition name="pets" extends="baseLayout">
+        <put name="body" value="/category/pets.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="homelifestyle" extends="baseLayout">
+        <put name="body" value="/category/home-lifestyle.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="electronics" extends="baseLayout">
+        <put name="body" value="/category/electronics.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="mobiles" extends="baseLayout">
+        <put name="body" value="/category/mobiles.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="entertainment" extends="baseLayout">
+        <put name="body" value="/category/entertainment.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="propertyforsale" extends="baseLayout">
+        <put name="body" value="/category/propertyforsale.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="carsbikes" extends="baseLayout">
+        <put name="body" value="/category/carsbikes.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="realestate" extends="baseLayout">
+        <put name="body" value="/category/realestate.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="jobservices" extends="baseLayout">
+        <put name="body" value="/category/jobservices.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="services" extends="baseLayout">
+        <put name="body" value="/category/services.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="paymentcategory" extends="baseLayout">
+        <put name="body" value="/paymentcategory.jsp" />
+    </definition>
+ 
+   <definition name="registerTiles" extends="baseLayout">
+  <put name="body" value="/register.jsp" />
+ </definition>
+    <definition name="postregister" extends="baseLayout">
+        <put name="body" value="/postregister.jsp" />
+    </definition>
+    <definition name="failtoregister" extends="baseLayout">
+        <put name="body" value="/failtoregister.jsp" />
+    </definition>
+    <definition name="loginTiles" extends="baseLayout">
+        <put name="body" value="/login.jsp" />
+    </definition>
+     <definition name="logoutTiles" extends="baseLayout">
+        <put name="body" value="/logout.jsp" />
+    </definition>
+    
+    <definition name="success" extends="baseLayout">
+        <put name="leftmenu" value="/afterloginleftmenu.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="body" value="/afterloginhome.jsp" />
+    </definition>
+    <definition name="failure" extends="baseLayout">
+        <put name="body" value="/failure.jsp" />
+    </definition>
+    <definition name="myhome" extends="baseLayout">
+        <put name="leftmenu" value="/afterloginleftmenu.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="body" value="/afterloginhome.jsp" />
+    </definition>
+    <definition name="viewads" extends="baseLayout">
+        <put name="leftmenu" value="/afterloginleftmenu.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="body" value="/viewads.jsp" />
+    </definition>
+
+    <definition name="mydashboard" extends="baseLayout">
+        <put name="leftmenu" value="/afterloginleftmenu.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="body" value="/mydashboard.jsp" />
+    </definition>
+    <definition name="mydashedit" extends="baseLayout">
+        <put name="body" value="/mydashedit.jsp" />
+    </definition>
+    <definition name="guesthouses" extends="baseLayout">
+        <put name="body" value="/guesthouses.jsp" />
+    </definition>
+    <definition name="businessproposal" extends="baseLayout">
+        <put name="body" value="/businessproposal.jsp" />
+    </definition>
+    <definition name="holidaytimes" extends="baseLayout">
+        <put name="body" value="/holidaytimes.jsp" />
+    </definition>
+    <definition name="culturalevents" extends="baseLayout">
+        <put name="body" value="/culturalevents.jsp" />
+    </definition>
+    <definition name="escorts" extends="baseLayout">
+        <put name="body" value="/escorts.jsp" />
+    </definition>
+    <definition name="insertdata" extends="baseLayout">
+        <put name="body" value="/insertdata.jsp" />
+        <put name="leftmenu" value="/tiles_pages/inner-left-menu.jsp" />
+    </definition>
+    <definition name="subcategorytype" extends="baseLayout">
+        <put name="body" value="/uploadfile.jsp" />
+        <put name="leftmenu" value="/subcategorypage.jsp" />
+    </definition>
+ 
+    <definition name="postclassifiedadvs" extends="baseLayout">
+        <put name="body" value="/postclassifiedadvs.jsp" />
+    </definition>
+
+    <definition name="homepage" extends="baseLayout">
+        <put name="body" value="/tiles_pages/home.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+    </definition>
+    <definition name="searchpage" extends="baseLayout">
+        <put name="body" value="/searchpage.jsp" />
+    </definition>
+    <definition name="aboutus" extends="baseLayout">
+        <put name="body" value="/aboutus.jsp" />
+    </definition>
+    <definition name="help" extends="baseLayout">
+        <put name="body" value="/help.jsp" />
+    </definition>
+    <definition name="term" extends="baseLayout">
+        <put name="body" value="/term.jsp" />
+    </definition>
+    <definition name="advertise" extends="baseLayout">
+        <put name="body" value="/advertise.jsp" />
+    </definition>
+    <definition name="privacy" extends="baseLayout">
+        <put name="body" value="/privacy.jsp" />
+    </definition>
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+
+
+    <definition name="detailsLayout" path="/detailslayout.jsp">
+        <put name="title" value="Tiles Example" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+        <put name="body" value="/tiles_pages/body.jsp" />
+        <put name="footer" value="/tiles_pages/footer.jsp" />
+    </definition>
+
+
+
+    <definition name="organizationDetails" extends="detailsLayout">
+        <put name="body" value="/organizationDetails.jsp" />
+    </definition>
+  
+
+    <!-- Amdin layout part start from here-->
+
+    <definition name="adminDetailsLayout" path="/adminlayout.jsp">
+        <put name="title" value="Tiles Example" />
+        <put name="header" value="/tiles_pages/header3.jsp" />
+        <put name="adminleftmenu" value="/adminDetails/adminleftmenu.jsp"/>
+        <put name="body" value="/tiles_pages/body.jsp" />
+        <put name="footer" value="/tiles_pages/footer.jsp" />
+    </definition>
+
+
+    <definition name="hint" extends="adminDetailsLayout">
+        <put name="body" value="/hint.jsp" />
+    </definition>
+    <definition name="admindetails" extends="adminDetailsLayout">
+        <put name="body" value="/adminDetails/adminuserlogin.jsp" />
+    </definition>
+    <definition name="category" extends="adminDetailsLayout">
+        <put name="body" value="/category.jsp" />
+    </definition>
+    <definition name="postcategory" extends="adminDetailsLayout">
+        <put name="body" value="/postcategory.jsp" />
+    </definition>
+    <definition name="subcategory" extends="adminDetailsLayout">
+        <put name="body" value="/subcategory.jsp" />
+    </definition>
+    <definition name="postsubcategory" extends="adminDetailsLayout">
+        <put name="body" value="/postsubcategory.jsp" />
+    </definition>
+    <definition name="adminuserlogin" extends="adminDetailsLayout">
+        <put name="body" value="/adminDetails/adminuserlogin.jsp" />
+    </definition>
+    <definition name="editdata" extends="baseLayout">
+        <put name="body" value="/editdata.jsp" />
+    </definition>
+    <definition name="update" extends="baseLayout">
+        <put name="body" value="/update.jsp" />
+    </definition>
+    <definition name="sellerbuyerinfo" extends="baseLayout">
+        <put name="body" value="/seller-buyer-info.jsp" />
+        <put name="leftmenu" value="/tiles_pages/leftmenu.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+    </definition>
+    <definition name="buyerselleraction" extends="baseLayout">
+        <put name="body" value="/sellerbuyeraction.jsp" />
+        <put name="leftmenu" value="/tiles_pages/leftmenu.jsp" />
+        <put name="header" value="/tiles_pages/header.jsp" />
+    </definition>
+    
+
+ <definition name="forgotpassTiles" extends="baseLayout">
+  <put name="body" value="/forgotpass.jsp" />
+ </definition>
+  <definition name="updatepass" extends="baseLayout">
+  <put name="body" value="/updatepass.jsp" />
+ </definition>
+
+ 
+ <!--ADMIN-->
+  <!-- souptik -->
+    <definition name="adminDetailsLayout2" path="/adminlayout2.jsp">
+        <put name="title" value="Tiles Example" />
+        <put name="header" value="/tiles_pages/header3.jsp" />
+        <put name="body" value="/adminDetails/adminuserlogin.jsp" />
+        <put name="footer" value="/tiles_pages/footer.jsp" />
+    </definition>
+
+    <definition name="hint" extends="adminDetailsLayout">
+        <put name="body" value="/hint.jsp" />
+    </definition>
+    
+    <!-- souptik -->
+   <definition name="forgotpasswordTiles" extends="adminDetailsLayout2">
+        <put name="body" value="/adminforgotpassword.jsp" />
+    </definition>
+    <definition name="adminforgotpassword" extends="adminDetailsLayout2">
+        <put name="body" value="/adminforgotpassword.jsp" />
+    </definition>  
+<!--    souptik-->
+    <definition name="adpasswordsuccess" extends="adminDetailsLayout2">
+        <put name="body" value="/adminDetails/adminpassrecovery.jsp " />
+    </definition>
+    <definition name="succesfullrecover" extends="adminDetailsLayout2">
+        <put name="header" value="/tiles_pages/header2.jsp"/>
+        <put name="body" value="/adminDetails/afteradminloginhome.jsp " />
+       
+    </definition>
+    
+     <definition name="adminsuccesspassTiles" extends="adminDetailsLayout2">
+<!--        <put name="header" value="/tiles_pages/header2.jsp"/>-->
+        <put name="body" value="/adminsuccesspass.jsp " />
+       
+    </definition>
+    <definition name="adforgotfailure" extends="adminDetailsLayout2">
+        <put name="body" value="/adminforgotpassword.jsp" />
+    </definition>
+    
+    <!-- souptik -->
+    <definition name="admindetails" extends="adminDetailsLayout2">
+        <put name="body" value="/adminDetails/adminuserlogin.jsp" />
+    </definition>
+    <definition name="adsuccessearch" extends="adminDetailsLayout">
+        <put name="header" value="/tiles_pages/header2.jsp"/>
+        <put name="body" value="/adminDetails/afteradminloginhome.jsp"/>
+        <put name="adminleftmenu" value="/adminDetails/adminLoginLeftMenu.jsp"/>
+    </definition>
+    <definition name="adfailure" extends="adminDetailsLayout2">
+        <put name="body" value="/adminDetails/adminuserlogin.jsp"/>
+    </definition>
+   <definition name="accessdetailstype" extends="adminDetailsLayout">
+        <put name="body" value="/afterAdminLogin/accessory_details_type.jsp"/>
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+    </definition>
+    <definition name="accessdetailsbrand" extends="adminDetailsLayout">
+        <put name="body" value="/afterAdminLogin/accessory_details_brand.jsp"/>
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+    </definition>
+    
+    <definition name="accessory_details_Tiles" extends="adminDetailsLayout">
+        <put name="body" value="/afterAdminLogin/accessory_details_body.jsp"/>
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+    </definition>
+    
+    <definition name="accessoryTypeSuccess" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/accessory_details_type.jsp"/>
+    </definition>
+    
+    <definition name="viewAllAccessoryType" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/accessory_details_type.jsp"/>
+    </definition>
+
+    <definition name="modifyAccessoryType" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_accessory_type.jsp"/>
+    </definition>
+    
+    <definition name="addAccessoryTypeTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_accessory_type.jsp"/>
+    </definition>
+    
+    <definition name="failToAddAccessoryType" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_access_type.jsp"/>
+    </definition>
+    
+    
+    <definition name="accessoryBrandSuccess" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/accessory_details_brand.jsp"/>
+    </definition>
+    
+    <definition name="viewAllAccessoryBrand" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/accessory_details_brand.jsp"/>
+    </definition>
+    <definition name="modifyAccessoryBrand" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_accessory_brand.jsp"/>
+    </definition>
+    <definition name="addAccessoryBrandTiles" extends="adminDetailsLayout">
+       <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+       <put name="body" value="/afterAdminLogin/add_new_accessory_brand.jsp"/>  
+    </definition>
+    <definition name="failToAddAccessoryBrand" extends="adminDetailsLayout">
+       <put name="adminleftmenu" value="/afterAdminLogin/accessory_details_leftmenu.jsp"/>
+       <put name="body" value="/afterAdminLogin/fail_to_add_access_brand.jsp"/>
+    </definition>
+    
+    
+    <definition name="classifiedcategorytiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_details_body.jsp"/>
+    </definition>
+    <definition name="classifiedCategorySuccess" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_category.jsp"/>
+    </definition>
+    <definition name="viewAllClassifiedCategory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_category.jsp"/>
+    </definition>
+    <definition name="modifyClassifiedCategory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_classified_category.jsp"/>
+    </definition>
+    <definition name="addClassifiedCategoryTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_classified_cat.jsp"/>
+    </definition>
+    <definition name="failToAddClassifiedCategory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_classified_cat.jsp"/>
+    </definition>
+    <definition name="classifiedAdvPhoto" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_adv_photo.jsp"/>
+    </definition>
+    <definition name="viewAllClassifiedAdv" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_adv_photo.jsp"/>
+    </definition>
+    <definition name="modifyClassifiedAdv" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_classified_adv.jsp"/>
+    </definition>
+    <definition name="addClassifiedAdvTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_classified_adv.jsp"/>
+    </definition>
+    <definition name="failToAddClassifiedAdv" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_classified_adv.jsp"/>
+    </definition>
+    <definition name="classifiedSubCategory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_sub_category.jsp"/> 
+    </definition>
+    <definition name="viewAllClassifiedSubCat" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/classified_sub_category.jsp"/>
+    </definition>
+    <definition name="modifyClassifiedSubCat" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_classified_sub_category.jsp"/>
+    </definition>
+    <definition name="addClassifiedSubCatTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_classified_sub_cat.jsp"/>
+    </definition>
+    <definition name="failToAddClassifiedSubCat" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/classified_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_classified_sub_cat.jsp"/>
+    </definition>
+    <definition name="mobilecategoryTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_details_body.jsp"/>
+    </definition> 
+    
+    <definition name="mobileBrand" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_brand.jsp"/>
+    </definition>
+    <definition name="viewAllMobileBrand" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_brand.jsp"/>
+    </definition>
+    <definition name="modifyMobileBrand" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_mobile_brand.jsp"/>
+    </definition>
+    <definition name="addMobileBrandTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_mobile_brand.jsp"/>
+    </definition>
+    <definition name="failToMobileBrand" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_mobile_brand.jsp"/>
+    </definition>
+    
+    <definition name="mobileCond" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_condition.jsp"/>
+    </definition>
+    <definition name="viewAllMobileCond" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_condition.jsp"/>
+    </definition>
+    <definition name="modifyMobileCond" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_mobile_condition.jsp"/>
+    </definition>
+    <definition name="addMobileCondTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_mobile_condition.jsp"/>
+    </definition>
+    <definition name="failToMobileCond" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_new_mobi_cond.jsp"/>
+    </definition>
+    
+    <definition name="mobileInclude" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_include.jsp"/>
+    </definition>
+    <definition name="viewAllMobileInclude" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_include.jsp"/>
+    </definition>
+    <definition name="modifyMobileInclude" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_mobile_include.jsp"/>
+    </definition>
+    <definition name="addMobileIncludeTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_mobi_include.jsp"/>
+    </definition>
+    <definition name="failToMobileInclude" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_new_mobi_incl.jsp"/>
+    </definition>
+    <definition name="mobileModel" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_model.jsp"/>
+    </definition>
+    <definition name="viewAllMobileModel" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobile_model.jsp"/>
+    </definition>
+    <definition name="modifyMobileModel" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_mobile_model.jsp"/>
+    </definition>
+    <definition name="addMobileModelTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_mobi_model.jsp"/>
+    </definition>
+    <definition name="failToMobileModel" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_new_mobi_model.jsp"/>
+    </definition>
+    <definition name="mobiNoofsim" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobi_noofsim.jsp"/>
+    </definition>
+    <definition name="viewAllMobiNoofsim" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobi_noofsim.jsp"/>
+    </definition>
+    <definition name="modifyMobiNoofsim" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_mobi_noofsim.jsp"/>
+    </definition>
+    <definition name="addMobiNoofsimTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_mobi_sim.jsp"/>
+    </definition>
+    <definition name="failToMobiNoofsim" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_new_mobi_sim.jsp"/>
+    </definition>
+    <definition name="mobiOsTabTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobi_os_tab.jsp"/>
+    </definition>
+    <definition name="viewAllMobiOsTab" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/mobi_os_tab.jsp"/>
+    </definition>
+    <definition name="modifyMobiOsTab" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_mobi_os_tab.jsp"/>
+    </definition>
+    <definition name="addMobiOsTabTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_mobi_os_tab.jsp"/>
+    </definition>
+    <definition name="failtoMobiOSTab" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/afterAdminLogin/mobile_details_leftmenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_new_os_tab.jsp"/>
+    </definition>
+    
+    <definition name="postAccessory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/adminDetails/adminLoginLeftMenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/post_accessory_details.jsp"/>
+    </definition>
+    <definition name="viewAllPostAccessory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/adminDetails/adminLoginLeftMenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/post_accessory_details.jsp"/>
+    </definition>
+    <definition name="modifyPostAccessory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/adminDetails/adminLoginLeftMenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/modify_post_accessory_details.jsp"/>
+    </definition>
+    <definition name="addPostAccessoryTiles" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/adminDetails/adminLoginLeftMenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/add_new_post_accessory.jsp"/>
+    </definition>
+    <definition name="failtoPostAccessory" extends="adminDetailsLayout">
+        <put name="adminleftmenu" value="/adminDetails/adminLoginLeftMenu.jsp"/>
+        <put name="body" value="/afterAdminLogin/fail_to_add_new_post_accessory.jsp"/>
+    </definition>
+    
+    <!-- Logout Action -->
+    <definition name="logouttiles" extends="baseLayout">
+        <put name="body" value="/login.jsp" />
+    </definition>
+</tiles-definitions>
